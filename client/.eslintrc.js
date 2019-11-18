@@ -36,6 +36,7 @@ module.exports = {
     "react/style-prop-object": 2,
     "react/static-property-placement": 2,
     "react/sort-comp": 2,
+    "react/prop-types": 1,
     "react/self-closing-comp": 2,
     "react/no-unused-state": 2,
     "react/no-unused-prop-types": 2,

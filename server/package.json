@@ -3,25 +3,37 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon ./app",
-    "start": "node ./app",
+    "dev": "cross-env NODE_ENV=development nodemon ./app",
+    "start": "cross-env NODE_ENV=production node ./app",
+    "prod:start": "cross-env NODE_ENV=production pm2 start ./app.js --name app-name",
+    "prod:restart": "cross-env NODE_ENV=production pm2 restart app-name",
     "lint": "eslint ./"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
+    "crypto": "^1.0.1",
     "debug": "^4.1.1",
+    "dotenv-flow": "^3.1.0",
     "errorhandler": "^1.5.1",
     "express": "^4.17.1",
+    "express-swagger-generator": "^1.1.15",
     "express-validator": "^6.2.0",
+    "generate-password": "^1.4.2",
     "http-errors": "^1.7.3",
-    "mongoose": "^5.6.11",
+    "jsonwebtoken": "^8.5.1",
+    "mailgun-js": "^0.22.0",
+    "mongoose": "^5.7.11",
     "mongoose-beautiful-unique-validation": "^7.1.1",
     "mongoose-paginate": "^5.0.3",
     "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "rand-token": "^0.4.0",
     "response-time": "^2.3.2"
   },
   "devDependencies": {
+    "cross-env": "^6.0.3",
     "nodemon": "^1.19.1"
   }
 }

@@ -11,7 +11,13 @@ const toValidationErrors = (errors) =>
     return acc;
   }, {});
 
-module.exports = (getData) => (req, res, next) => {
+module.exports = (err, req, res, next) => {
+  if (!err) {
+    next();
+  }
+
+  console.error(err.errors || err.message);
+
   // Request validation errors
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -21,24 +27,14 @@ module.exports = (getData) => (req, res, next) => {
     return;
   }
 
-  getData(
-    req,
-    (err, data) => {
-      if (err) {
-        // Exceptions
-        if (!err.errors) {
-          next(err);
-          return;
-        }
+  // Mongoose validation errors
+  if (err.errors) {
+    res
+      .status(err.status || 400)
+      .json({ errors: toValidationErrors(err.errors) });
+    return;
+  }
 
-        // Mongoose validation errors
-        res.status(422).json({ errors: toValidationErrors(err.errors) });
-        return;
-      }
-
-      res.json({ data });
-    },
-    res,
-    next
-  );
+  // Exceptions
+  res.status(err.status || 500).json({ message: err.message });
 };

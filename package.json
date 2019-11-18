@@ -6,11 +6,13 @@
     "postinstall": "cd client && yarn install && cd ../server && yarn install",
     "dev": "concurrently \"cd client && yarn dev\" \"cd server && yarn dev\"",
     "build": "cd client && yarn build",
+    "prod:start": "cd server && yarn prod:start",
+    "prod:restart": "cd server && yarn prod:restart",
     "lint": "eslint ./ --ext js,jsx",
     "lint:fix": "eslint ./ --ext js,jsx --fix"
   },
   "devDependencies": {
-    "babel-eslint": "10.0.2",
+    "babel-eslint": "10.0.3",
     "concurrently": "^4.1.0",
     "eslint": "^6.1.0",
     "eslint-config-airbnb": "18.0.1",
@@ -37,5 +39,8 @@
       "eslint --ext js,jsx --fix",
       "git add"
     ]
+  },
+  "engines": {
+    "node": ">=10.17.0"
   }
 }

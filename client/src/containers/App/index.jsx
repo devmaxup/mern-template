@@ -1,12 +1,11 @@
 import React from 'react';
-import Users from '../Users';
 
 import styles from './styles.module.scss';
 
-const App = () => (
+const App = ({ children }) => (
   <div className={styles.content}>
     Hello from app!
-    <Users />
+    {children}
   </div>
 );
 

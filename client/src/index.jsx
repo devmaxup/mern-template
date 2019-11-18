@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import 'whatwg-fetch';
+
+import './resources/globalAuth';
+import App from './App';
 
 import './styles/index.scss';
 

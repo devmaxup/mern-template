@@ -24,7 +24,7 @@ module.exports = {
     "import/prefer-default-export": 0,
     "no-param-reassign": 0,
     "no-underscore-dangle": 0,
-    "complexity": [2, { "max": 5 }],
+    "complexity": 0,
     "max-depth": [2, { "max": 3 }],
     "node/exports-style": [2, "module.exports"],
     "node/file-extension-in-import": [2, "never"],
