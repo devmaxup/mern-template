@@ -12,6 +12,7 @@ const {
  * @property {string} accessToken
  * @property {string} refreshToken
  */
+
 const createAndSaveAuthTokens = async (user, req) => {
   const payload = {
     id: user.id,

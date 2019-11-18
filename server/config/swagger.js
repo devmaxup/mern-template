@@ -18,6 +18,6 @@ module.exports = (app) => {
       },
     },
     basedir: path.resolve(__dirname, '../'),
-    files: ['./routes/*.js', './models/*.js'],
+    files: ['./helpers/*.js', './models/*.js', './routes/*.js'],
   });
 };
