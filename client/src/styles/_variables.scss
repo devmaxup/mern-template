@@ -1,0 +1,33 @@
+$grid: 16px;
+$border-size: 1px;
+$border-radius: 4px;
+$box-shadow-size: 8px;
+
+$xs-font-size: 10px;
+$sm-font-size: 12px;
+$normal-font-size: 14px;
+$lg-font-size: 16px;
+$xl-font-size: 18px;
+$xxl-font-size: 24px;
+
+$black-color: #222;
+$light-black-color: #444;
+$dark-grey-color: #777;
+$grey-color: #aaa;
+$light-grey-color: #ccc;
+$xlight-grey-color: #eee;
+$background-color: #fafafa;
+$white-color: #fff;
+$blue-color: #00a4d3;
+$bright-blue-color: saturate($blue-color, 30);
+$dark-blue-color: desaturate($blue-color, 30);
+$red-color: #c01a19;
+$bright-red-color: saturate($red-color, 30);
+$dark-red-color: desaturate($red-color, 30);
+$green-color: #92d36e;
+$bright-green-color: saturate($green-color, 20);
+$dark-green-color: desaturate($green-color, 20);
+$box-shadow-color: rgba(0, 0, 0, 0.3);
+
+$border: $border-size solid $light-grey-color;
+$box-shadow: 0 0 $box-shadow-size $box-shadow-color;
